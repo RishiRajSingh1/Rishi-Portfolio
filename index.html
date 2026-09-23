@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rishi Raj Singh — Full Stack Software Engineer</title>
+  <meta name="description" content="Rishi Raj Singh is a full-stack software engineer in Noida, India, building microservices-based lending platforms in Java, Spring Boot, React and Next.js for leading financial institutions.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#06090F" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F5F7FA" media="(prefers-color-scheme: light)">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","dark")}})();</script>
+  <meta property="og:title" content="Rishi Raj Singh — Full Stack Software Engineer">
+  <meta property="og:description" content="Software that banks trust. Java · Spring Boot · React · Next.js · Microservices.">
+  <meta property="og:image" content="assets/img/og.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/img/github-avatar.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&family=Caveat:wght@500&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/img/rishi-cutout-1200.webp" type="image/webp" media="(min-width: 769px)">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip" href="#about">Skip to content</a>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__mark">RRS</div>
+    <div class="loader__bar"><span></span></div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+  <!-- Nav -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav__mono" data-scroll>RRS</a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#about" data-scroll>About</a>
+      <a href="#experience" data-scroll>Experience</a>
+      <a href="#projects" data-scroll>Projects</a>
+      <a href="#skills" data-scroll>Skills</a>
+      <a href="#contact" data-scroll>Contact</a>
+    </nav>
+    <div class="nav__right">
+      <button class="theme" id="themeToggle" aria-label="Toggle light or dark theme">
+        <svg class="theme__sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="theme__moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="sound" id="soundToggle" aria-label="Toggle ambient sound" aria-pressed="false">
+        <span class="sound__bars"><i></i><i></i><i></i><i></i></span>
+        <span class="sound__label">Sound</span>
+      </button>
+      <a href="assets/Rishi-Raj-Singh-Resume.pdf" class="btn btn--primary btn--sm" download>Resume ↓</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#about" data-scroll>About</a>
+      <a href="#experience" data-scroll>Experience</a>
+      <a href="#projects" data-scroll>Projects</a>
+      <a href="#skills" data-scroll>Skills</a>
+      <a href="#contact" data-scroll>Contact</a>
+    </nav>
+    <p class="menu__foot mono">Rishi Raj Singh — Full Stack Software Engineer</p>
+  </div>
+
+  <main id="main">
+
+    <!-- 01 HERO -->
+    <section class="hero" id="hero">
+      <canvas class="aurora" id="auroraHero" aria-hidden="true"></canvas>
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <canvas class="particles" id="particles" aria-hidden="true"></canvas>
+
+      <div class="hero__content container">
+        <div class="hero__copy">
+          <p class="eyebrow mono hero__eyebrow"><span class="live-dot"></span>Rishi Raj Singh — Full Stack Software Engineer · Noida, India</p>
+          <h1 class="hero__title display-xl">
+            <span class="line">Software</span>
+            <span class="line">that banks</span>
+            <span class="line"><em class="accent">trust.</em></span>
+          </h1>
+          <p class="hero__sub body-l">I design and build microservices-based lending platforms in Java, Spring Boot, React and Next.js — running in production at some of India's largest banks and NBFCs.</p>
+          <div class="hero__actions">
+            <a href="#projects" class="btn btn--primary magnetic" data-scroll>See my work <span class="arrow arrow--down">↓</span></a>
+            <a href="assets/Rishi-Raj-Singh-Resume.pdf" class="btn btn--ghost" download>Download resume</a>
+          </div>
+          <div class="hero__trust mono">
+            <span><b>2+</b> yrs in production</span><i></i><span><b>6</b> financial institutions</span><i></i><span><b id="heroRepos">49</b> public repos</span>
+          </div>
+        </div>
+
+        <div class="hero__portrait" id="portrait" aria-hidden="true">
+          <div class="portrait__glow portrait__glow--navy"></div>
+          <div class="portrait__glow portrait__glow--lime"></div>
+          <div class="portrait__orbit"><span></span></div>
+          <div class="portrait__ring"></div>
+          <video class="scene-video scene-video--hero" data-scene="scene-01-hero" muted playsinline loop autoplay preload="auto" poster="assets/video/scene-01-hero-poster.jpg" aria-hidden="true">
+            <source src="assets/video/scene-01-hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="assets/video/scene-01-hero.webm" type="video/webm">
+            <source src="assets/video/scene-01-hero.mp4" type="video/mp4">
+          </video>
+          <picture class="portrait__img" data-depth="0.02">
+            <source srcset="assets/img/rishi-cutout-700.webp" media="(max-width: 768px)" type="image/webp">
+            <source srcset="assets/img/rishi-cutout-1200.webp" type="image/webp">
+            <img src="assets/img/rishi-cutout-1200.png" alt="Rishi Raj Singh" width="1200" height="2112" fetchpriority="high">
+          </picture>
+          <div class="chip chip--1" data-depth="0.06"><img src="assets/img/tech/spring.svg" alt=""><span class="chip__k">Backend</span><span class="chip__v">Java · Spring Boot</span></div>
+          <div class="chip chip--2" data-depth="0.09"><img src="assets/img/tech/react.svg" alt=""><span class="chip__k">Frontend</span><span class="chip__v">React · Next.js</span></div>
+          <div class="chip chip--3" data-depth="0.05"><span class="chip__dot"></span><span class="chip__k">Live</span><span class="chip__v">LMS · LOS in production</span></div>
+          <div class="chip chip--4" data-depth="0.08"><img src="assets/img/tech/docker.svg" alt=""><span class="chip__k">Cloud</span><span class="chip__v">AWS · Docker · K8s</span></div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true"><span id="heroScrollLine"></span></div>
+      <p class="hero__scene mono" aria-hidden="true">01 / Rishi Raj Singh</p>
+    </section>
+
+    <!-- 02 TECH MARQUEE + STATS -->
+    <section class="stats" id="stats">
+      <div class="techstrip" aria-label="Technologies">
+        <div class="techstrip__track" data-marquee data-marquee-speed="50">
+          <span><img src="assets/img/tech/java.svg" alt="">Java</span><span><img src="assets/img/tech/spring.svg" alt="">Spring Boot</span><span><img src="assets/img/tech/react.svg" alt="">React</span><span><img src="assets/img/tech/nextjs.svg" alt="">Next.js</span><span><img src="assets/img/tech/typescript.svg" alt="">TypeScript</span><span><img src="assets/img/tech/nodejs.svg" alt="">Node.js</span><span><img src="assets/img/tech/angularjs.svg" alt="">Angular</span><span><img src="assets/img/tech/mongodb.svg" alt="">MongoDB</span><span><img src="assets/img/tech/couchbase.svg" alt="">Couchbase</span><span><img src="assets/img/tech/postgresql.svg" alt="">PostgreSQL</span><span><img src="assets/img/tech/docker.svg" alt="">Docker</span><span><img src="assets/img/tech/kubernetes.svg" alt="">Kubernetes</span><span><img src="assets/img/tech/amazonwebservices.svg" alt="">AWS</span><span><img src="assets/img/tech/jenkins.svg" alt="">Jenkins</span><span><img src="assets/img/tech/tailwindcss.svg" alt="">Tailwind</span>
+          <span><img src="assets/img/tech/java.svg" alt="">Java</span><span><img src="assets/img/tech/spring.svg" alt="">Spring Boot</span><span><img src="assets/img/tech/react.svg" alt="">React</span><span><img src="assets/img/tech/nextjs.svg" alt="">Next.js</span><span><img src="assets/img/tech/typescript.svg" alt="">TypeScript</span><span><img src="assets/img/tech/nodejs.svg" alt="">Node.js</span><span><img src="assets/img/tech/angularjs.svg" alt="">Angular</span><span><img src="assets/img/tech/mongodb.svg" alt="">MongoDB</span><span><img src="assets/img/tech/couchbase.svg" alt="">Couchbase</span><span><img src="assets/img/tech/postgresql.svg" alt="">PostgreSQL</span><span><img src="assets/img/tech/docker.svg" alt="">Docker</span><span><img src="assets/img/tech/kubernetes.svg" alt="">Kubernetes</span><span><img src="assets/img/tech/amazonwebservices.svg" alt="">AWS</span><span><img src="assets/img/tech/jenkins.svg" alt="">Jenkins</span><span><img src="assets/img/tech/tailwindcss.svg" alt="">Tailwind</span>
+        </div>
+      </div>
+      <div class="container stats__grid">
+        <div class="stat">
+          <div class="stat__num display-l"><span data-count="2" data-suffix="+">0</span></div>
+          <p class="stat__label mono">Years shipping to production</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num display-l"><span data-count="6">0</span></div>
+          <p class="stat__label mono">Banks &amp; NBFCs served</p>
+        </div>
+        <div class="stat stat--accent">
+          <div class="stat__num display-l"><span data-count="49" id="statRepos">0</span></div>
+          <p class="stat__label mono">Public GitHub repositories</p>
+        </div>
+        <div class="stat">
+          <div class="stat__num display-l"><span data-count="30" data-suffix="%">0</span></div>
+          <p class="stat__label mono">Maintenance cost cut at Tech Mahindra</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 ABOUT / STATEMENT -->
+    <section class="mission" id="about">
+      <div class="glow glow--mission" aria-hidden="true"></div>
+      <div class="glow glow--mission2" aria-hidden="true"></div>
+      <div class="mission__inner">
+        <p class="mission__text display-l" data-wordlight>
+          I like the hard, unglamorous parts of software — <b>ledgers,</b> <b>disbursements,</b> <b>schemas,</b> <b>uptime</b> — and making them feel <em class="accent">simple.</em>
+        </p>
+        <p class="mission__caption mono">Full-stack engineer · Java &amp; Spring Boot microservices · React &amp; Next.js · Fintech &amp; lending systems</p>
+      </div>
+    </section>
+
+    <!-- 04 EXPERIENCE (stacked panels) -->
+    <section class="pillars" id="experience">
+      <div class="pillars__track">
+
+        <article class="pillar" data-pillar="1">
+          <div class="pillar__orb pillar__orb--a" aria-hidden="true"></div>
+          <div class="container pillar__grid">
+            <div class="pillar__text">
+              <div class="pillar__logo"><img src="assets/img/logos/lentra.svg" alt="Lentra"></div>
+              <div class="pillar__num mono">01</div>
+              <p class="eyebrow mono">Jan 2025 — Present · Noida</p>
+              <h2 class="display-m reveal-words">Associate Product Engineer, <em>Lentra</em></h2>
+              <p class="body-l">End-to-end development on Lentra's Loan Management and Loan Origination systems — the platform behind digital lending at banks like HDFC and Standard Chartered.</p>
+              <ul class="pillar__list mono">
+                <li>Real-time disbursement, repayment, ledger &amp; reporting workflows</li>
+                <li>Java · Spring Boot microservices · AngularJS front-ends</li>
+                <li>Client customizations for Central Bank of India, Poonawalla Fincorp, BharatPe, RamFincorp &amp; Infina</li>
+                <li>Production stability and regulatory-grade issue resolution</li>
+              </ul>
+            </div>
+            <div class="pillar__visual tilt">
+              <div class="card card--flow">
+                <div class="card__head mono"><span><i class="live-dot"></i>Loan lifecycle · LOS → LMS</span><span class="accent">Live</span></div>
+                <ol class="flow" id="flow" aria-hidden="true">
+                  <li><b>Origination</b><span>KYC · bureau · decision</span></li>
+                  <li><b>Sanction</b><span>limits · terms · e-sign</span></li>
+                  <li><b>Disbursement</b><span>NEFT / IMPS · tranche</span></li>
+                  <li><b>Repayment</b><span>EMI · NACH · prepay</span></li>
+                  <li><b>Ledger</b><span>GL · accruals · DPD</span></li>
+                  <li><b>Reporting</b><span>regulatory · MIS</span></li>
+                </ol>
+                <div class="card__legend mono"><span><i style="background:var(--navy-bright)"></i>Service</span><span><i style="background:var(--lime)"></i>Event stream</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pillar" data-pillar="2">
+          <div class="pillar__orb pillar__orb--b" aria-hidden="true"></div>
+          <div class="container pillar__grid">
+            <div class="pillar__text">
+              <div class="pillar__logo pillar__logo--round"><img src="assets/img/logos/techmahindra.png" alt="Tech Mahindra"></div>
+              <div class="pillar__num mono">02</div>
+              <p class="eyebrow mono">May 2024 — Jan 2025</p>
+              <h2 class="display-m reveal-words">Web Developer, <em>Tech Mahindra</em></h2>
+              <p class="body-l">Built internal tooling for a department inside a 146,000-person IT services company — and the marketing surfaces that sat in front of it.</p>
+              <ul class="pillar__list mono">
+                <li>Internal project-management system that cut maintenance costs by 30%</li>
+                <li>Vendor-management admin panels with multi-role authentication</li>
+                <li>React + Node.js end to end</li>
+                <li>Animated banners and landing pages with advanced CSS</li>
+              </ul>
+            </div>
+            <div class="pillar__visual tilt">
+              <div class="card card--admin">
+                <div class="card__head mono"><span>Vendor admin · roles</span><span class="accent">−30% cost</span></div>
+                <div class="roles" id="roles" aria-hidden="true">
+                  <div class="roles__row roles__row--head"><span>Permission</span><span>Admin</span><span>Manager</span><span>Vendor</span></div>
+                  <div class="roles__row"><span>Create project</span><i class="on"></i><i class="on"></i><i></i></div>
+                  <div class="roles__row"><span>Approve invoice</span><i class="on"></i><i class="on"></i><i></i></div>
+                  <div class="roles__row"><span>Upload deliverable</span><i class="on"></i><i></i><i class="on"></i></div>
+                  <div class="roles__row"><span>Manage users</span><i class="on"></i><i></i><i></i></div>
+                  <div class="roles__row"><span>View reports</span><i class="on"></i><i class="on"></i><i class="on lime"></i></div>
+                </div>
+                <div class="bars bars--small" id="finBars" aria-hidden="true">
+                  <i style="--h:100%"></i><i style="--h:92%"></i><i style="--h:85%"></i><i style="--h:80%"></i><i style="--h:74%"></i><i style="--h:70%"></i>
+                </div>
+                <div class="card__legend mono"><span>Maintenance cost · 6 months</span><span class="accent">↓ 30%</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="pillar" data-pillar="3">
+          <div class="pillar__orb pillar__orb--c" aria-hidden="true"></div>
+          <div class="container pillar__grid">
+            <div class="pillar__text">
+              <div class="pillar__logo pillar__logo--round"><img src="assets/img/logos/upgrad.png" alt="upGrad"></div>
+              <div class="pillar__num mono">03</div>
+              <p class="eyebrow mono">Jan 2024 — May 2024</p>
+              <h2 class="display-m reveal-words">Full Stack Intern, <em>upGrad</em></h2>
+              <p class="body-l">Where the MERN stack stopped being a course and became a habit — full lifecycle work from schema to deploy.</p>
+              <ul class="pillar__list mono">
+                <li>MongoDB · Express · React · Node across the whole lifecycle</li>
+                <li>Optimized MongoDB storage and retrieval for scale</li>
+                <li>B.Tech CSE, Lovely Professional University · 2020–2024</li>
+              </ul>
+            </div>
+            <div class="pillar__visual tilt">
+              <div class="card card--stack">
+                <div class="card__head mono"><span>Stack, then and now</span><span>2024 → 2026</span></div>
+                <div class="stackgrid" id="stackgrid" aria-hidden="true">
+                  <div><img src="assets/img/tech/mongodb.svg" alt=""><span>MongoDB</span></div>
+                  <div><img src="assets/img/tech/express.svg" alt=""><span>Express</span></div>
+                  <div><img src="assets/img/tech/react.svg" alt=""><span>React</span></div>
+                  <div><img src="assets/img/tech/nodejs.svg" alt=""><span>Node.js</span></div>
+                  <div class="later"><img src="assets/img/tech/java.svg" alt=""><span>Java</span></div>
+                  <div class="later"><img src="assets/img/tech/spring.svg" alt=""><span>Spring Boot</span></div>
+                  <div class="later"><img src="assets/img/tech/nextjs.svg" alt=""><span>Next.js</span></div>
+                  <div class="later"><img src="assets/img/tech/kubernetes.svg" alt=""><span>Kubernetes</span></div>
+                </div>
+                <div class="card__legend mono"><span><i style="background:var(--navy-bright)"></i>2024 · MERN</span><span><i style="background:var(--lime)"></i>2025+ · Enterprise</span></div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CINEMATIC 1 — full-screen scroll-scrubbed video, nothing on top -->
+    <section class="cine" id="cine-1" data-rate="2" aria-label="Cinematic video">
+      <video class="cine__video" data-scene="scene-02-builder" muted playsinline preload="auto" poster="assets/video/scene-02-builder-poster.jpg">
+        <source src="assets/video/scene-02-builder-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+        <source src="assets/video/scene-02-builder.webm" type="video/webm">
+        <source src="assets/video/scene-02-builder.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- 05 STORY -->
+    <section class="story" id="story">
+      <canvas class="aurora aurora--dim" id="auroraStory" aria-hidden="true"></canvas>
+      <div class="container story__grid">
+        <aside class="story__side">
+          <div class="portrait-card tilt" aria-hidden="true">
+            <div class="portrait-card__inner card">
+              <div class="portrait-card__bg"></div>
+              <img src="assets/img/rishi-cutout-700.webp" alt="" class="portrait-card__img">
+              <div class="portrait-card__meta mono"><span>Rishi Raj Singh</span><span>Noida, IN</span></div>
+              <div class="portrait-card__tag mono">Open to work</div>
+            </div>
+          </div>
+          <div class="timeline" aria-label="Timeline">
+            <div class="timeline__line"><span id="timelineFill"></span></div>
+            <ol class="mono">
+              <li data-beat="0"><i></i>2020 · B.Tech CSE, LPU</li>
+              <li data-beat="1"><i></i>2024 · upGrad → Tech Mahindra</li>
+              <li data-beat="2"><i></i>2025 · Lentra, lending platforms</li>
+              <li data-beat="3"><i></i>2026 · Building what's next</li>
+            </ol>
+          </div>
+        </aside>
+
+        <div class="story__body">
+          <p class="eyebrow mono">The story</p>
+          <h2 class="display-m reveal-words">From Jamshedpur to the systems <em>banks run on.</em></h2>
+
+          <div class="beat" data-beat="0">
+            <p class="body-l"><b>I started with HTML footers and to-do apps.</b> At Lovely Professional University I filled a GitHub with clones, DSA solutions and small React projects — the kind of repetition that makes fundamentals automatic.</p>
+          </div>
+          <div class="beat" data-beat="1">
+            <p class="body-l"><b>Then the work got real.</b> An upGrad internship turned MERN into muscle memory. At Tech Mahindra I shipped an internal project-management system and vendor admin panels that cut a department's maintenance cost by 30%.</p>
+          </div>
+          <div class="beat" data-beat="2">
+            <p class="body-l"><b>Now I build lending infrastructure.</b> At Lentra I work on the loan management and origination systems used by India's banks and NBFCs — disbursement, repayment, ledgers, reporting — where correctness isn't a feature, it's the whole job.</p>
+          </div>
+
+          <p class="signature" aria-label="Signed, Rishi"><span>— Rishi</span></p>
+        </div>
+      </div>
+      <p class="story__scene mono" aria-hidden="true">02 / The story</p>
+    </section>
+
+    <!-- 06 PROJECTS -->
+    <section class="work" id="projects">
+      <div class="container work__head">
+        <p class="eyebrow mono">Selected projects</p>
+        <h2 class="display-l reveal-words">Things I've built, <em>end to end.</em></h2>
+      </div>
+      <div class="work__pin">
+        <div class="work__track" id="workTrack">
+          <a class="wcard wcard--photo" data-speed="1" style="--hue:214" href="https://github.com/RishiRajSingh1" target="_blank" rel="noopener">
+            <div class="wcard__art" style="background-image:url('assets/img/photos/dashboard-sm.webp')" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">01</span>
+            <span class="wcard__tag mono">Microservices platform</span>
+            <h3 class="display-m">SchoolM</h3>
+            <p>An education-management platform built as independent Spring Boot services — attendance, timetabling, users — on PostgreSQL and Couchbase with a Next.js front-end and backend caching.</p>
+            <ul class="wcard__stack mono"><li>Java</li><li>Spring Boot</li><li>Next.js</li><li>PostgreSQL</li><li>Couchbase</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+          <a class="wcard wcard--bars" data-speed="1.08" style="--hue:84" href="https://github.com/RishiRajSingh1" target="_blank" rel="noopener">
+            <div class="wcard__art" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">02</span>
+            <span class="wcard__tag mono">React Native app</span>
+            <h3 class="display-m">Rishi Tracker</h3>
+            <p>A daily task and expense tracker with a dynamic theme engine, an overlap-proof timeline, background alarms and pie-chart analytics for daily and monthly metrics.</p>
+            <ul class="wcard__stack mono"><li>React Native</li><li>Expo</li><li>Charts</li><li>Notifications</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+          <a class="wcard wcard--grid" data-speed="0.94" style="--hue:262" href="https://github.com/RishiRajSingh1/JobsAtEz" target="_blank" rel="noopener">
+            <div class="wcard__art" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">03</span>
+            <span class="wcard__tag mono">Freelance marketplace</span>
+            <h3 class="display-m">JobsAtEz</h3>
+            <p>A freelancing platform connecting clients and freelancers — secure payments, project tracking, messaging and advanced search. Improved engagement by 30%.</p>
+            <ul class="wcard__stack mono"><li>React</li><li>Node.js</li><li>MongoDB</li><li>Shadcn UI</li><li>Aceternity</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+          <a class="wcard wcard--photo" data-speed="1.05" style="--hue:190" href="https://github.com/RishiRajSingh1/Popcornpass" target="_blank" rel="noopener">
+            <div class="wcard__art" style="background-image:url('assets/img/photos/neon-circuit-sm.webp')" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">04</span>
+            <span class="wcard__tag mono">Java backend</span>
+            <h3 class="display-m">Popcornpass</h3>
+            <p>A movie-ticket booking application — seat selection, showtimes and bookings — built to practise clean service layering in Java.</p>
+            <ul class="wcard__stack mono"><li>Java</li><li>REST APIs</li><li>SQL</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+          <a class="wcard wcard--rings" data-speed="0.97" style="--hue:30" href="https://github.com/RishiRajSingh1/NextJsEcommerce" target="_blank" rel="noopener">
+            <div class="wcard__art" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">05</span>
+            <span class="wcard__tag mono">Next.js · TypeScript</span>
+            <h3 class="display-m">Next.js E-commerce</h3>
+            <p>A typed storefront with product catalogue, cart and checkout flows — later the base for Fastre.in, a gadget store I built and ran.</p>
+            <ul class="wcard__stack mono"><li>Next.js</li><li>TypeScript</li><li>Tailwind</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+          <a class="wcard wcard--dots" data-speed="1.1" style="--hue:330" href="https://github.com/RishiRajSingh1/ReactChatApp" target="_blank" rel="noopener">
+            <div class="wcard__art" aria-hidden="true"></div>
+            <span class="wcard__idx display-l">06</span>
+            <span class="wcard__tag mono">Realtime</span>
+            <h3 class="display-m">React Chat App</h3>
+            <p>Realtime messaging with Socket.io — rooms, presence and a Node/Express backend. One of several MERN builds from 2023.</p>
+            <ul class="wcard__stack mono"><li>React</li><li>Socket.io</li><li>Express</li><li>MongoDB</li></ul>
+            <span class="wcard__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 SKILLS -->
+    <section class="skills" id="skills">
+      <div class="skills__bg" aria-hidden="true"></div>
+      <div class="glow glow--product" aria-hidden="true"></div>
+      <div class="container product__head">
+        <p class="eyebrow mono">Skills</p>
+        <h2 class="display-l reveal-words">The stack I <em>ship with.</em></h2>
+        <p class="body-l product__sub">Enterprise Java on the back, modern React on the front, and the cloud tooling to keep it all running.</p>
+      </div>
+      <div class="container skills__grid">
+        <div class="skillcat">
+          <p class="skillcat__h mono">Languages</p>
+          <ul>
+            <li><img src="assets/img/tech/java.svg" alt="">Java</li>
+            <li><img src="assets/img/tech/typescript.svg" alt="">TypeScript</li>
+            <li><img src="assets/img/tech/javascript.svg" alt="">JavaScript</li>
+            <li><img src="assets/img/tech/postgresql.svg" alt="">SQL</li>
+            <li><img src="assets/img/tech/html5.svg" alt="">HTML5</li>
+            <li><img src="assets/img/tech/css3.svg" alt="">CSS3 / Sass</li>
+          </ul>
+        </div>
+        <div class="skillcat">
+          <p class="skillcat__h mono">Backend</p>
+          <ul>
+            <li><img src="assets/img/tech/spring.svg" alt="">Spring Boot</li>
+            <li><img src="assets/img/tech/nodejs.svg" alt="">Node.js</li>
+            <li><img src="assets/img/tech/express.svg" alt="">Express</li>
+            <li><img src="assets/img/tech/socketio.svg" alt="">Socket.io</li>
+            <li><span class="skill-ico">API</span>REST &amp; microservices</li>
+          </ul>
+        </div>
+        <div class="skillcat">
+          <p class="skillcat__h mono">Frontend</p>
+          <ul>
+            <li><img src="assets/img/tech/react.svg" alt="">React</li>
+            <li><img src="assets/img/tech/nextjs.svg" alt="">Next.js</li>
+            <li><img src="assets/img/tech/angularjs.svg" alt="">AngularJS</li>
+            <li><img src="assets/img/tech/react.svg" alt="">React Native</li>
+            <li><img src="assets/img/tech/tailwindcss.svg" alt="">Tailwind · Aceternity</li>
+            <li><img src="assets/img/tech/materialui.svg" alt="">Material UI · shadcn</li>
+          </ul>
+        </div>
+        <div class="skillcat">
+          <p class="skillcat__h mono">Data</p>
+          <ul>
+            <li><img src="assets/img/tech/postgresql.svg" alt="">PostgreSQL</li>
+            <li><img src="assets/img/tech/mongodb.svg" alt="">MongoDB</li>
+            <li><img src="assets/img/tech/couchbase.svg" alt="">Couchbase</li>
+            <li><img src="assets/img/tech/redis.svg" alt="">Caching</li>
+          </ul>
+        </div>
+        <div class="skillcat">
+          <p class="skillcat__h mono">DevOps &amp; tools</p>
+          <ul>
+            <li><img src="assets/img/tech/amazonwebservices.svg" alt="">AWS</li>
+            <li><img src="assets/img/tech/docker.svg" alt="">Docker</li>
+            <li><img src="assets/img/tech/kubernetes.svg" alt="">Kubernetes</li>
+            <li><img src="assets/img/tech/jenkins.svg" alt="">Jenkins · CI/CD</li>
+            <li><img src="assets/img/tech/git.svg" alt="">Git · GitHub</li>
+            <li><img src="assets/img/tech/postman.svg" alt="">Postman</li>
+          </ul>
+        </div>
+        <div class="skillcat skillcat--domain">
+          <p class="skillcat__h mono">Domain</p>
+          <ul>
+            <li><span class="skill-ico">LMS</span>Loan management systems</li>
+            <li><span class="skill-ico">LOS</span>Loan origination</li>
+            <li><span class="skill-ico">GL</span>Ledgers, disbursement, repayment</li>
+            <li><span class="skill-ico">REG</span>Banking compliance</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GitHub live -->
+      <div class="container">
+        <div class="gh" id="gh">
+          <div class="gh__left">
+            <img src="assets/img/github-avatar.jpg" alt="" class="gh__avatar">
+            <div>
+              <p class="mono">github.com/<b>RishiRajSingh1</b></p>
+              <p class="gh__since mono" id="ghSince">Since 2021</p>
+            </div>
+          </div>
+          <div class="gh__stats">
+            <div><span class="display-m" id="ghRepos">49</span><span class="mono">Repos</span></div>
+            <div><span class="display-m" id="ghFollowers">3</span><span class="mono">Followers</span></div>
+            <div><span class="display-m" id="ghLangs">6</span><span class="mono">Languages</span></div>
+          </div>
+          <div class="gh__langs" id="ghLangBar" aria-label="Languages used across public repositories"></div>
+          <a href="https://github.com/RishiRajSingh1" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">Open GitHub ↗</a>
+        </div>
+      </div>
+
+      <!-- Education & certs -->
+      <div class="container edu">
+        <div class="edu__item">
+          <img src="assets/img/logos/lpu.png" alt="Lovely Professional University">
+          <div><p class="mono">2020 — 2024 · Jalandhar</p><h3>B.Tech, Computer Science &amp; Engineering</h3><p class="dim">Lovely Professional University · Specialization in Full Stack Development (upGrad)</p></div>
+        </div>
+        <div class="edu__item">
+          <span class="edu__ico mono">CERT</span>
+          <div><p class="mono">Certifications</p><h3>Full Stack Web Development with React</h3><p class="dim">Udemy · Data Structures &amp; Algorithms — GeeksforGeeks</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CINEMATIC 2 — full-screen scroll-scrubbed video, nothing on top -->
+    <section class="cine" id="cine-2" data-rate="1.25" aria-label="Cinematic video">
+      <video class="cine__video" data-scene="scene-03-campus" muted playsinline preload="auto" poster="assets/video/scene-03-campus-poster.jpg">
+        <source src="assets/video/scene-03-campus-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+        <source src="assets/video/scene-03-campus.webm" type="video/webm">
+        <source src="assets/video/scene-03-campus.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <!-- 08 CONTACT -->
+    <section class="cta" id="contact">
+      <canvas class="aurora aurora--dim" id="auroraCta" aria-hidden="true"></canvas>
+      <canvas class="globe" id="globe" aria-hidden="true"></canvas>
+      <div class="cta__shade" aria-hidden="true"></div>
+      <div class="container cta__content">
+        <p class="eyebrow mono"><span class="live-dot"></span>Open to full-stack &amp; backend roles · Remote or Noida / Delhi NCR</p>
+        <h2 class="display-xl reveal-words">Let's build something <em class="accent">that lasts.</em></h2>
+        <p class="body-l cta__sub">Whether it's a lending platform, an internal tool, or a product idea that needs an engineer who owns the whole stack — I'd like to hear about it.</p>
+        <div class="cta__actions">
+          <a href="mailto:rishisinghrajputr2@gmail.com" class="btn btn--primary btn--lg magnetic">Email me <span class="arrow">→</span></a>
+          <a href="https://www.linkedin.com/in/rishi-b4u" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/RishiRajSingh1" class="btn btn--ghost btn--lg" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <p class="cta__micro mono">rishisinghrajputr2@gmail.com · usually replies within a day</p>
+      </div>
+      <p class="cta__scene mono" aria-hidden="true">03 / Contact</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="marquee marquee--footer" aria-hidden="true">
+      <div class="marquee__track" data-marquee data-marquee-speed="60">
+        <span>Rishi Raj Singh — Full Stack Software Engineer — Java · Spring Boot · React · Next.js — </span>
+        <span>Rishi Raj Singh — Full Stack Software Engineer — Java · Spring Boot · React · Next.js — </span>
+      </div>
+    </div>
+    <div class="container footer__grid mono">
+      <div>
+        <p class="footer__h">Connect</p>
+        <a href="https://www.linkedin.com/in/rishi-b4u" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/RishiRajSingh1" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:rishisinghrajputr2@gmail.com">Email</a>
+        <a href="assets/Rishi-Raj-Singh-Resume.pdf" download>Resume (PDF)</a>
+      </div>
+      <div>
+        <p class="footer__h">Work</p>
+        <a href="#experience" data-scroll>Experience</a>
+        <a href="#projects" data-scroll>Projects</a>
+        <a href="#skills" data-scroll>Skills</a>
+      </div>
+      <div>
+        <p class="footer__h">Site</p>
+        <a href="#about" data-scroll>About</a>
+        <a href="#story" data-scroll>Story</a>
+        <a href="#contact" data-scroll>Contact</a>
+        <a href="#hero" data-scroll>Top ↑</a>
+      </div>
+    </div>
+    <div class="container footer__bottom mono">
+      <span>© 2026 Rishi Raj Singh</span>
+      <span>Noida, India · Built with vanilla HTML, CSS &amp; JS</span>
+      <span id="clock">--:--</span>
+    </div>
+    <div class="footer__line" aria-hidden="true"></div>
+  </footer>
+
+  <audio id="ambient" loop preload="none" src="assets/audio/ambient.mp3"></audio>
+
+  <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"></span><span class="cursor__label mono"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <noscript><style>.loader{display:none}.line,.line>span,.word,.beat,.reveal-words,.hero__eyebrow,.hero__sub,.hero__actions,.hero__trust,.hero__portrait{opacity:1!important;transform:none!important;clip-path:none!important}</style></noscript>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="script.js" defer></script>
+</body>
+</html>

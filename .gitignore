@@ -1,0 +1,5 @@
+# source masters and private inputs — not needed by the live site
+Media/
+tools/stills-extra.json
+.DS_Store
+Thumbs.db
