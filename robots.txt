@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rishirajsingh1.github.io/Rishi-Portfolio/sitemap.xml
