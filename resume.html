@@ -2,9 +2,11 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rishi Raj Singh — Résumé | Full Stack Software Engineer (Java, Spring Boot, React, Next.js), Noida</title>
-  <meta name="description" content="Résumé of Rishi Raj Singh, Full Stack Software Engineer in Noida, India. Associate Product Engineer at Lentra building loan management (LMS) and loan origination (LOS) systems in Java, Spring Boot, React and Next.js. Previously Tech Mahindra and upGrad. B.Tech CSE, Lovely Professional University.">
+  <meta name="description" content="Résumé of Rishi Raj Singh, Full Stack Software Engineer in Noida, India. Associate Product Engineer at Lentra building loan management (LMS) and loan origination (LOS) systems in Java, Spring Boot, React and Next.js. Previously Associate Analyst at Tech Mahindra. B.Tech CSE, Lovely Professional University.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="author" content="Rishi Raj Singh">
   <link rel="canonical" href="https://rishirajsingh1.github.io/Rishi-Portfolio/resume.html">
@@ -16,7 +18,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
   <meta name="color-scheme" content="dark light">
-  <script>(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.setAttribute("data-theme",t)}catch(e){}})();</script>
+  <script src="theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <script type="application/ld+json">
@@ -29,15 +31,15 @@
       "@type": "Person",
       "name": "Rishi Raj Singh",
       "jobTitle": "Full Stack Software Engineer",
-      "description": "Full-stack software engineer building microservices-based lending platforms in Java, Spring Boot, React and Next.js for banks and NBFCs.",
+      "description": "Full-stack software engineer building microservices-based lending platforms in Java, Spring Boot and React, alongside Next.js web projects and React Native mobile apps.",
       "url": "https://rishirajsingh1.github.io/Rishi-Portfolio/",
       "image": "https://rishirajsingh1.github.io/Rishi-Portfolio/assets/img/og.jpg",
       "email": "mailto:rishisinghrajputr2@gmail.com",
       "address": { "@type": "PostalAddress", "addressLocality": "Noida", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
       "worksFor": { "@type": "Organization", "name": "Lentra", "url": "https://www.lentra.ai/" },
-      "hasOccupation": { "@type": "Occupation", "name": "Full Stack Software Engineer", "skills": "Java, Spring Boot, React, Next.js, TypeScript, Node.js, AngularJS, React Native, PostgreSQL, MongoDB, Couchbase, AWS, Docker, Kubernetes, Jenkins, Microservices, Loan Management Systems" },
+      "hasOccupation": { "@type": "Occupation", "name": "Full Stack Software Engineer", "skills": "Java, Spring Boot, Spring Security, Apache Kafka, Camunda, React, Next.js, TypeScript, Node.js, React Native, PostgreSQL, MongoDB, Couchbase, AWS, Docker, Kubernetes, Jenkins, Kibana, Microservices" },
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Lovely Professional University", "url": "https://www.lpu.in/" },
-      "knowsAbout": ["Java", "Spring Boot", "Microservices", "React", "Next.js", "TypeScript", "Node.js", "Fintech", "Loan Management Systems", "Loan Origination Systems", "AWS", "Docker", "Kubernetes"],
+      "knowsAbout": ["Java", "Spring Boot", "Spring Security", "Apache Kafka", "Camunda", "Microservices", "React", "Next.js", "React Native", "TypeScript", "Node.js", "PostgreSQL", "MongoDB", "Couchbase", "Loan Management Systems", "Loan Origination Systems", "AWS", "Docker", "Kubernetes", "Kibana"],
       "sameAs": ["https://github.com/RishiRajSingh1", "https://www.linkedin.com/in/rishi-b4u"]
     }
   }
@@ -71,7 +73,7 @@
   <main class="wrap">
     <nav class="top" aria-label="Résumé navigation">
       <a href="./">← Portfolio</a>
-      <a class="btn" href="assets/Rishi-Raj-Singh-Resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
+      <a class="btn" href="assets/Rishi-Raj-Singh-Resume.pdf" target="_blank" rel="noopener noreferrer">Open PDF ↗</a>
     </nav>
 
     <header>
@@ -87,18 +89,18 @@
 
     <section aria-labelledby="summary">
       <h2 id="summary">Summary</h2>
-      <p class="summary">Results-driven Full Stack Software Engineer with a proven track record of developing scalable microservices-based enterprise applications. Expertise in Java, Spring Boot, ReactJS and Next.js, with strong domain knowledge in financial technology and banking systems — consistently delivering secure, high-performance solutions for leading financial institutions.</p>
+      <p class="summary">Full-stack software developer with 2+ years of professional experience building web applications and production microservices. At Lentra, I work with Java, Spring Boot, Kafka, Camunda and React across lending workflows in a 150+ service ecosystem, helping reduce transaction processing latency by approximately 25%. My project work extends to Next.js platforms and React Native mobile applications.</p>
     </section>
 
     <section aria-labelledby="skills" class="skills">
       <h2 id="skills">Skills</h2>
       <dl>
-        <dt>Languages</dt><dd>Java, JavaScript, TypeScript, SQL, HTML5, CSS3 / Sass</dd>
-        <dt>Backend</dt><dd>Spring Boot, Node.js, Express, REST APIs, Socket.io, microservices architecture</dd>
-        <dt>Frontend</dt><dd>ReactJS, Next.js, AngularJS, React Native, Material UI, shadcn/ui, Tailwind CSS, Aceternity UI</dd>
+        <dt>Languages</dt><dd>Java, JavaScript, TypeScript, SQL, HTML5, CSS3</dd>
+        <dt>Backend</dt><dd>Spring Boot, Spring Security, Apache Kafka, Camunda, Node.js, REST APIs, microservices</dd>
+        <dt>Frontend</dt><dd>ReactJS, Next.js, React Native, Material UI, shadcn/ui, Tailwind CSS, Aceternity UI</dd>
         <dt>Databases</dt><dd>PostgreSQL, MongoDB, Couchbase, relational and NoSQL data modelling, caching</dd>
-        <dt>DevOps &amp; tools</dt><dd>AWS, Docker, Kubernetes, Jenkins, CI/CD pipelines, Git, GitHub, Postman, Expo, Cloudinary</dd>
-        <dt>Domain</dt><dd>Loan Management Systems (LMS), Loan Origination Systems (LOS), disbursement, repayment, ledger and regulatory reporting workflows</dd>
+        <dt>DevOps &amp; tools</dt><dd>AWS, Docker, Kubernetes, Jenkins, Kibana, Git, GitHub, Expo</dd>
+        <dt>Domain</dt><dd>Loan Management Systems (LMS), Loan Origination Systems (LOS), disbursement, repayment, reporting and production support</dd>
       </dl>
     </section>
 
@@ -109,32 +111,24 @@
         <h3>Associate Product Engineer — Lentra</h3>
         <p class="meta">January 2025 – Present · Noida, Uttar Pradesh, India</p>
         <ul>
-          <li>Driving end-to-end development in the lending domain with hands-on expertise in Loan Management System (LMS) and Loan Origination System (LOS) products.</li>
-          <li>Designing and building scalable microservices-based applications using Java, Spring Boot and AngularJS as a full-stack developer.</li>
-          <li>Implementing secure, production-grade real-time workflows: disbursement, repayment, ledger and reporting modules.</li>
-          <li>Delivering client-specific customisations for financial institutions including Central Bank of India, Poonawalla Fincorp, BharatPe, RamFincorp and Infina.</li>
-          <li>Ensuring enterprise production stability, performance optimisation and issue resolution aligned with banking regulatory requirements.</li>
+          <li>Develop and maintain Loan Management System (LMS) and Loan Origination System (LOS) workflows across frontend and backend services.</li>
+          <li>Engineer microservices within an ecosystem of over 150 services using Java, Spring Boot, Apache Kafka, Camunda and React.</li>
+          <li>Streamline disbursement, repayment and reporting workflows, reducing processing latency by approximately 25% while maintaining data integrity.</li>
+          <li>Collaborate with cross-functional teams on feature rollouts for Central Bank of India, Poonawalla Fincorp and BharatPe.</li>
+          <li>Support production stability through performance tuning, proactive issue resolution and attention to banking requirements.</li>
         </ul>
       </article>
 
       <article class="job">
-        <h3>Web Developer — Tech Mahindra</h3>
+        <h3>Associate Analyst — Tech Mahindra</h3>
         <p class="meta">May 2024 – January 2025</p>
         <ul>
-          <li>Developed an internal project-management system for the department, streamlining data management and reducing maintenance costs by 30%.</li>
-          <li>Designed vendor-management admin panels with multi-role authentication using React and Node.js.</li>
-          <li>Built animated banners and landing pages with advanced CSS animations and React components.</li>
+          <li>Built an internal project management system that automated routine data tasks and reduced maintenance overhead by nearly a third.</li>
+          <li>Developed responsive vendor administration panels with multi-role authentication for hundreds of active users using React and Node.js; improved backend query responsiveness.</li>
+          <li>Created interactive UI components and landing experiences with React and modern CSS animations.</li>
         </ul>
       </article>
 
-      <article class="job">
-        <h3>Full Stack Developer Intern — upGrad</h3>
-        <p class="meta">January 2024 – May 2024</p>
-        <ul>
-          <li>Hands-on MERN stack (MongoDB, Express.js, React.js, Node.js) development across the full web development lifecycle.</li>
-          <li>Implemented and optimised MongoDB databases for efficient storage and retrieval, improving performance and scalability.</li>
-        </ul>
-      </article>
     </section>
 
     <section aria-labelledby="projects">
@@ -155,13 +149,6 @@
           <li>Analytics dashboards with dynamically rendered pie charts for daily and monthly time and expense metrics.</li>
         </ul>
       </article>
-      <article class="job">
-        <h3>JobsAtEz — freelancing platform</h3>
-        <ul>
-          <li>Full-stack marketplace connecting freelancers and clients, built with React, Node.js, Express, MongoDB, Aceternity UI and shadcn/ui.</li>
-          <li>Secure payments, project tracking, communication tools and advanced search — improved user engagement by 30%. <a href="https://github.com/RishiRajSingh1/JobsAtEz" target="_blank" rel="noopener">Source on GitHub</a>.</li>
-        </ul>
-      </article>
     </section>
 
     <section aria-labelledby="education">
@@ -170,19 +157,8 @@
         <h3>B.Tech, Computer Science &amp; Engineering — Lovely Professional University</h3>
         <p class="meta">2020 – 2024 · Jalandhar, Punjab · Specialisation in Full Stack Development (upGrad)</p>
       </article>
-      <article class="job">
-        <h3>Class XII (Computer Science) — Gulmohar High School, Jamshedpur</h3>
-        <p class="meta">2019 – 2020</p>
-      </article>
     </section>
 
-    <section aria-labelledby="certs">
-      <h2 id="certs">Certifications</h2>
-      <ul>
-        <li>Full Stack Web Development with React.js — Udemy</li>
-        <li>Data Structures and Algorithms (Self-Paced) — GeeksforGeeks</li>
-      </ul>
-    </section>
 
     <footer>
       <p>Rishi Raj Singh · Full Stack Software Engineer · Noida, India · <a class="noprint" href="./">rishirajsingh1.github.io/Rishi-Portfolio</a></p>

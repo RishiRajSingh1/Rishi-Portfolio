@@ -5,10 +5,32 @@
 (() => {
   'use strict';
 
-  // If a CDN script failed to load, show everything statically instead of a blank page.
+  // Keep essential controls working if an animation dependency cannot load.
   if (!window.gsap || !window.ScrollTrigger) {
     document.documentElement.classList.add('no-anim');
     const l = document.getElementById('loader'); l && l.remove();
+    const menu = document.getElementById('menu');
+    const burger = document.getElementById('burger');
+    const setMenu = (open) => {
+      menu.classList.toggle('is-open', open);
+      menu.setAttribute('aria-hidden', String(!open));
+      menu.inert = !open;
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    };
+    burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+        setMenu(false); burger.focus();
+      }
+    });
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      const root = document.documentElement;
+      const theme = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', theme);
+      try { localStorage.setItem('theme', theme); } catch (_) { /* Storage is optional. */ }
+    });
     return;
   }
   gsap.registerPlugin(ScrollTrigger);
@@ -115,7 +137,7 @@
       .to(['.hero__sub', '.hero__actions', '.hero__trust'], { opacity: 1, duration: 0.9, stagger: 0.1 }, '-=0.6')
       .fromTo('.hero__portrait', { opacity: 0, y: 60, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 1.6, ease: 'power3.out' }, '-=1.8')
       .from('.chip', { opacity: 0, y: 24, scale: 0.9, duration: 0.9, stagger: 0.12, ease: 'back.out(1.6)' }, '-=1.0')
-      .add(() => $('#nav').classList.toggle('is-visible', window.scrollY > innerHeight * 0.8));
+      .add(() => $('#nav').classList.add('is-visible'));
 
     const start = () => tl.play();
     if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
@@ -267,53 +289,6 @@
   }
 
   /* ----------------------------------------------------------------------
-     8. Product — dashboard flatten + live tiles
-  ---------------------------------------------------------------------- */
-  function initGitHub() {
-    const langColors = { JavaScript: '#F1E05A', TypeScript: '#3178C6', Java: '#B07219', HTML: '#E34C26', CSS: '#563D7C', Python: '#3572A5', Kotlin: '#A97BFF', Dart: '#00B4AB' };
-    const render = (user, repos) => {
-      if (user) {
-        $('#ghRepos').textContent = user.public_repos; $('#ghFollowers').textContent = user.followers;
-        $('#heroRepos').textContent = user.public_repos; $('#statRepos').dataset.count = user.public_repos;
-        $('#ghSince').textContent = 'Since ' + new Date(user.created_at).getFullYear();
-      }
-      if (repos && repos.length) {
-        const counts = {}; repos.forEach((r) => { if (r.language) counts[r.language] = (counts[r.language] || 0) + 1; });
-        const entries = Object.entries(counts).sort((a, b) => b[1] - a[1]); const total = entries.reduce((n, e) => n + e[1], 0);
-        $('#ghLangs').textContent = entries.length;
-        const bar = $('#ghLangBar'); bar.innerHTML = ''; $$('.gh__legend').forEach((el) => el.remove());
-        const legend = document.createElement('div'); legend.className = 'gh__legend';
-        entries.forEach(([lang, n]) => {
-          const i = document.createElement('i'); i.style.width = (n / total * 100) + '%'; i.style.background = langColors[lang] || '#97A3B8'; i.title = `${lang} · ${n}`; bar.appendChild(i);
-          const l = document.createElement('span'); l.innerHTML = `<i style="background:${langColors[lang] || '#97A3B8'}"></i>${lang} ${Math.round(n / total * 100)}%`; legend.appendChild(l);
-        });
-        bar.after(legend);
-        gsap.from(bar.children, { scaleX: 0, transformOrigin: 'left', duration: 1.2, stagger: 0.05, ease: 'expo.out', scrollTrigger: { trigger: bar, start: 'top 90%', once: true } });
-      }
-    };
-    // snapshot first (works offline), then live refresh
-    Promise.all([fetch('assets/data/github-user.json').then((r) => r.json()), fetch('assets/data/github-repos.json').then((r) => r.json())])
-      .then(([u, r]) => render(u, r)).catch(() => {});
-    Promise.all([fetch('https://api.github.com/users/RishiRajSingh1').then((r) => r.ok ? r.json() : null), fetch('https://api.github.com/users/RishiRajSingh1/repos?per_page=100').then((r) => r.ok ? r.json() : null)])
-      .then(([u, r]) => (u && r) && render(u, r)).catch(() => {});
-  }
-
-  /* ----------------------------------------------------------------------
-     9. Work — horizontal gallery
-  ---------------------------------------------------------------------- */
-  function initWork() {
-    if (isMobile || reduced) return; // native scroll-snap on mobile
-    const track = $('#workTrack'), pin = $('.work__pin');
-    const dist = () => track.scrollWidth - innerWidth;
-    gsap.to(track, { x: () => -dist(), ease: 'none',
-      scrollTrigger: { trigger: pin, start: 'top 12%', end: () => '+=' + dist(), pin: true, scrub: 0.6, invalidateOnRefresh: true, anticipatePin: 1 } });
-    $$('.wcard').forEach((c) => {
-      const s = parseFloat(c.dataset.speed || '1');
-      gsap.to(c, { y: (s - 1) * -120, ease: 'none', scrollTrigger: { trigger: pin, start: 'top 12%', end: () => '+=' + dist(), scrub: true } });
-    });
-  }
-
-  /* ----------------------------------------------------------------------
      10. CTA — video scrub + magnetic
   ---------------------------------------------------------------------- */
   function initCTA() {
@@ -329,37 +304,33 @@
   }
 
   /* ----------------------------------------------------------------------
-     11. Nav, menu, sound, progress, clock
+     11. Nav, menu, progress, clock
   ---------------------------------------------------------------------- */
   function initNav() {
     const nav = $('#nav'), menu = $('#menu'), burger = $('#burger');
-    ScrollTrigger.create({ start: () => innerHeight * 0.8, end: 'max',
-      onToggle: (s) => nav.classList.toggle('is-visible', s.isActive) });
+    nav.classList.add('is-visible');
     gsap.to('#progressBar', { scaleX: 1, ease: 'none', scrollTrigger: { start: 0, end: 'max', scrub: 0.3 } });
 
-    const closeMenu = () => { menu.classList.remove('is-open'); menu.setAttribute('aria-hidden', 'true'); burger.setAttribute('aria-expanded', 'false'); lenis && lenis.start(); };
+    const closeMenu = () => { menu.classList.remove('is-open'); menu.setAttribute('aria-hidden', 'true'); menu.inert = true; burger.setAttribute('aria-expanded', 'false'); burger.setAttribute('aria-label', 'Open menu'); lenis && lenis.start(); };
     burger.addEventListener('click', () => {
       const open = !menu.classList.contains('is-open');
       menu.classList.toggle('is-open', open); menu.setAttribute('aria-hidden', String(!open)); burger.setAttribute('aria-expanded', String(open));
+      menu.inert = !open; burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       lenis && (open ? lenis.stop() : lenis.start());
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && burger.getAttribute('aria-expanded') === 'true') {
+        closeMenu(); burger.focus();
+      }
     });
     $$('[data-scroll]').forEach((a) => a.addEventListener('click', (e) => {
       const id = a.getAttribute('href'); if (!id || !id.startsWith('#')) return;
       e.preventDefault(); closeMenu(); scrollTo(id, { offset: id === '#hero' ? 0 : -80 });
     }));
 
-    // Ambient sound (off by default)
-    const audio = $('#ambient'), toggle = $('#soundToggle');
-    toggle.addEventListener('click', async () => {
-      const on = toggle.getAttribute('aria-pressed') !== 'true';
-      toggle.setAttribute('aria-pressed', String(on));
-      if (on) { audio.volume = 0; try { await audio.play(); gsap.to(audio, { volume: 0.5, duration: 1.5 }); } catch (e) { toggle.setAttribute('aria-pressed', 'false'); } }
-      else gsap.to(audio, { volume: 0, duration: 1, onComplete: () => audio.pause() });
-    });
-
     // Local clock
     const clock = $('#clock');
-    const tick = () => { const d = new Date(); clock.textContent = d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false }) + ' IST'; };
+    const tick = () => { const d = new Date(); clock.textContent = d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Kolkata' }) + ' IST'; };
     tick(); setInterval(tick, 30000);
   }
 
@@ -618,8 +589,6 @@
     initMission();
     initPillars();
     initStory();
-    initGitHub();
-    initWork();
     initCTA();
     initNav();
     initCursor();
