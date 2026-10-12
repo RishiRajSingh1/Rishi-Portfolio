@@ -14,6 +14,8 @@ Content and the downloadable PDF are aligned with the October 4, 2026 resume. Th
 
 Preview locally with `python3 -m http.server 8765` and visit `http://localhost:8765`. There is no build step.
 
+The project section features FORM ATHLETIC, FOLD & FIRE and VÉRAULT, with local screenshots of the deployed websites, links to the live demos and GitHub source, and an email invitation for custom website enquiries. SchoolM and Rishi Tracker remain under application engineering. Screenshots are stored in `assets/img/projects/` and do not require loading another website inside the portfolio.
+
 The pages use a Content Security Policy that permits local scripts, Google Fonts and the public GitHub API, while blocking inline executable scripts, frames, plugins and form submissions. This is defense in depth; it does not remove a Google Safe Browsing listing. See [the security review notes](tools/SECURITY-REVIEW.md) for the confirmed warning and remaining owner action.
 
 - LinkedIn: https://www.linkedin.com/in/rishi-b4u
